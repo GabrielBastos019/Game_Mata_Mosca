@@ -14,17 +14,20 @@
 
     <div class="painel">
         <div class="vidas">
-            <img src="src/img/coracao_vazio.png">
-            <img src="src/img/coracao_cheio.png">
-            <img src="src/img/coracao_cheio.png">
+            <img id="v1" src="src/img/coracao_cheio.png">
+            <img id="v2" src="src/img/coracao_cheio.png">
+            <img id="v3" src="src/img/coracao_cheio.png">
         </div>
         <div class="cronometro">
-            Tempo Restante: ?
+            Tempo Restante: <span id="cronometro"></span>
         </div>
     </div>
 
     <script src="src/js/script.js"></script>
-    <script> posicaoRandonica()</script>
+    <script>
+        document.getElementById("cronometro").innerHTML = tempo
+        posicaoRandonica()
+    </script>
 </body>
 
 </html>
