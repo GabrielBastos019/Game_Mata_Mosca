@@ -1,17 +1,23 @@
 var altura = 0
 var largura = 0
 var vidas = 1
-var tempo = 15 
+var tempo = 15
 function redicionamentoDeTela() {
     altura = window.innerHeight
     largura = window.innerWidth
 }
 redicionamentoDeTela()
 
-var cronometro  = setInterval(
+var cronometro = setInterval(
     function () {
         tempo -= 1
-        document.getElementById("cronometro").innerHTML = tempo
+        if (tempo < 0) {
+            clearInterval(cronometro)
+            clearInterval(criarMosca)
+            window.location.href = "vitoria.html"
+        } else {
+            document.getElementById("cronometro").innerHTML = tempo
+        }
     }
 )
 function posicaoRandonica() {
@@ -66,8 +72,8 @@ function ladoAleatorio() {
         return "ladoB"
     }
 }
-setInterval(
+var criarMosca = setInterval(
     function () {
         posicaoRandonica()
     }
-,2000)
+    , 2000)
