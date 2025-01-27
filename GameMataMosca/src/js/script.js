@@ -2,11 +2,27 @@ var altura = 0
 var largura = 0
 var vidas = 1
 var tempo = 15
+var velocidade = 2000
+
 function redicionamentoDeTela() {
     altura = window.innerHeight
     largura = window.innerWidth
 }
 redicionamentoDeTela()
+
+var nivel = window.location.search
+nivel = nivel.replace('?', '')
+
+if (nivel === "facil") {
+    velocidade = 2000
+} else if (nivel === "normal") {
+    velocidade = 1500
+} else if (nivel === "dificil") {
+    velocidade = 1000
+} else if (nivel) {
+    velocidade = 750
+}
+
 
 var cronometro = setInterval(
     function () {
@@ -19,7 +35,7 @@ var cronometro = setInterval(
             document.getElementById("cronometro").innerHTML = tempo
         }
     }
-)
+    , 1000)
 function posicaoRandonica() {
     //remover oo mosquito anterior (caso exista)
     if (document.getElementById("mosquito")) {
@@ -76,4 +92,4 @@ var criarMosca = setInterval(
     function () {
         posicaoRandonica()
     }
-    , 2000)
+    , velocidade)
