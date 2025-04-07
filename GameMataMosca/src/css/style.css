@@ -1,30 +1,43 @@
-html{
-    cursor: url(/src/img/mata_mosca.png)30 30, auto;
+html {
+    cursor: url("/src/img/mata_mosca.png")30 30, auto;
 }
-body{
+
+body {
     background-image: url("/src/img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
-.mosquito1{
+
+.row {
+    width: 100%;
+}
+
+.mosquito1 {
     height: 50px;
     width: 50px;
 }
-.mosquito2{
+
+.mosquito2 {
     height: 70px;
     width: 70px;
 }
-.mosquito3{
+
+.mosquito3 {
     height: 90px;
     width: 90px;
 }
-.ladoA{
+
+.ladoA {
     transform: scaleX(1);
 }
-.ladoB{
+
+.ladoB {
     transform: scaleX(-1);
 }
-.painel{
+
+.painel {
     position: absolute;
     width: 190px;
     padding: 10px;
@@ -33,11 +46,23 @@ body{
     border-top: solid 1px white;
     opacity: 0.7;
 }
-.vidas{
+
+.vidas {
     float: left;
 }
-.cronometro{
+
+.cronometro {
     float: left;
     font-size: 20px;
     font-weight: bold;
+}
+
+.game {
+    max-width: 500px;
+    width: 100%;
+}
+
+.img-over {
+    max-width: 500px;
+    width: 100%;
 }
